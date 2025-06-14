@@ -1,0 +1,356 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: auto; /* Allow vertical scroll */
+  background-color: #1a202c;
+  color: #ffffff;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Add this to your App.css file */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border-left-color: #09f;
+  animation: spin 1s ease infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.app-container {
+  height: 100vh;
+  background-color: #1a202c;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: auto;
+}
+
+.app-header {
+  position: fixed; /* Changed from absolute to fixed */
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1a202c; /* Ensure header has a background color */
+  z-index: 1000; /* Ensure header is above other content */
+}
+
+.app-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #6366f1;
+}
+
+.sign-in-button {
+  background-color: #4f46e5;
+  color: #ffffff;
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s;
+}
+
+.sign-in-button:hover {
+  background-color: #4338ca;
+}
+
+.app-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 3.5rem;
+  padding-top: x; /* Add padding to account for fixed header height */
+}
+
+.hero-text {
+  margin-bottom: 2.5rem;
+  margin-top: 1000px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Media query for small size screens */
+@media (max-width: 812px) {
+  .hero-text {
+    margin-top: 1600px;
+  }
+}
+
+.hero-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  animation: fade-in 1.5s ease-in-out;
+  text-align: center;
+}
+
+.highlight {
+  color: #6366f1;
+}
+
+.hero-description {
+  font-size: 1.125rem;
+  max-width: 36rem;
+  margin-bottom: 40px;
+  text-align: center;
+  animation: slide-up 1.5s ease-in-out;
+}
+
+.benefits-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 48rem;
+  text-align: left;
+  animation: slide-up 1.5s ease-in-out;
+}
+
+.benefit-item {
+  padding: 1.5rem;
+  background-color: #2d3748;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.benefit-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #818cf8;
+  margin-bottom: 0.75rem;
+}
+
+.benefit-description {
+  color: #cbd5e0;
+}
+
+.roles-heading {
+  font-size: 2.5rem;
+  margin-bottom: 0px;
+  text-align: center;
+}
+
+.job-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px 0;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.job-image-large {
+  width: 450px;
+  height: 255px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 640px) {
+  .job-image-large {
+    width: 600px;
+    height: 168px;
+    margin-bottom: 20px;
+  }
+}
+
+.job-image-web {
+  width: 538px;
+  height: 113px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 640px) {
+  .job-image-web {
+    width: 538px;
+    height: 67px;
+    margin-bottom: 20px;
+  }
+}
+
+.job-description {
+  text-align: center;
+  max-width: 600px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sign-out-button {
+  position: absolute;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sign-out-button {
+  position: fixed;
+  top: 1.25rem;
+  right: 1.25rem;
+  background-color: #4f46e5;
+  color: #ffffff;
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  z-index: 1100; /* Higher than the header's z-index */
+  transition: all 0.2s;
+}
+
+.sign-out-button:hover {
+  background-color: #6d66eb;
+}
+
+.sign-in-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2.5rem;
+}
+
+.apply-button {
+  background-color: #4f46e5;
+  color: #ffffff;
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s;
+}
+
+.apply-button:hover {
+  background-color: #4338ca;
+}
+
+.app-footer {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.25rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: #a0aec0;
+  margin-bottom: 10px;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.social-media-links {
+  margin-top: 0.5rem;
+}
+
+.social-media-links a {
+  margin: 0 0.5rem;
+  text-decoration: none;
+  color: #0073e6;
+}
+
+.social-media-links a:hover {
+  text-decoration: underline;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Media query for mobile devices */
+@media (max-width: 812px) {
+  .benefits-grid {
+    grid-template-columns: 1fr; /* One column layout */
+  }
+
+  .app-container {
+    overflow: auto; /* Enable scrolling */
+  }
+}
+
+input,
+select,
+textarea {
+  background-color: #2d3748;
+  color: #ffffff;
+  border: 1px solid #4a5568;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #6366f1;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+}
+
+label {
+  color: #e2e8f0;
+}

@@ -1,0 +1,21 @@
+.top-margin {
+  margin-top: 400px; /* Adjust the value as needed */
+}
+
+@media (max-width: 812px) {
+  .top-margin {
+    margin-top: 440px;
+  }
+}
+
+@media (max-width: 640px) {
+  .top-margin {
+    margin-top: 900px;
+  }
+}
+
+/* styles.css */
+.input-small {
+  width: 33.33%;
+  justify-content: center;
+}
